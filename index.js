@@ -7,10 +7,10 @@ function wrap(originalFunction, ignore) {
     throw error
   }
 
-  return function (...arguments_) {
+  return function (...argumentsList) {
     let result
     try {
-      result = originalFunction.apply(this, arguments_)
+      result = originalFunction.apply(this, argumentsList)
     } catch (error) {
       handleError(error)
     }
