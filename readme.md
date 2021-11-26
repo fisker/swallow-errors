@@ -28,12 +28,12 @@ yarn add swallow-errors
 import {wrap, execute} from 'swallow-errors'
 
 const foo = wrap(() => {
-  throw new Error('oops')
+  throw new Error('oops!')
 })
 // Returns a function will never throw errors
 
 execute(() => {
-  throw new Error('oops')
+  throw new Error('oops!')
 })
 // Execute the function and ignore possible errors
 ```
@@ -44,7 +44,7 @@ execute(() => {
 
 Type: `function`
 
-Returns a function that .
+Returns a function that will ignore errors passed `ignore` test.
 
 #### `originalFunction`
 
@@ -74,4 +74,4 @@ foo()
 
 ### `execute(originalFunction, ignore?)`
 
-Execute the wrapped function _without arguments_.
+Execute the wrapped function **without arguments**.
